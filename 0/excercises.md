@@ -99,6 +99,11 @@ ls -l semester.sh | tail -c 22 > last-modified.txt
 cat last-modified.txt
 ```
 
+```console
+stat -f %Sm -t %d semester.sh >> last-modified.txt
+cat last-modified.txt
+```
+
 ## Ex11:
 
 Write a command that reads out your laptop battery’s power level or your desktop machine’s CPU temperature from /sys. Note: if you’re a macOS user, your OS doesn’t have sysfs, so you can skip this exercise.
