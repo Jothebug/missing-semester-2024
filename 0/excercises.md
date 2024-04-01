@@ -89,3 +89,18 @@ chmod +x semester
 ```
 
 I also read about `chmod` command in [How to Make Script Executable in Linux | chmod Command](https://www.geeksforgeeks.org/chmod-command-linux/)
+
+## Ex10:
+
+Use `|` and `>` to write the “last modified” date output by `semester` into a file called `last-modified.txt` in your home directory.
+
+```console
+ls -l semester.sh | tail -c 22 > last-modified.txt
+cat last-modified.txt
+```
+
+## Ex11:
+
+Write a command that reads out your laptop battery’s power level or your desktop machine’s CPU temperature from /sys. Note: if you’re a macOS user, your OS doesn’t have sysfs, so you can skip this exercise.
+
+=> I skip this ex because I use macOS
