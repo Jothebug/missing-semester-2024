@@ -1,0 +1,2 @@
+open a folder in vscode
+=> code -n path to folder
