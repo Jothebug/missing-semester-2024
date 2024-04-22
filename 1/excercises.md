@@ -35,3 +35,35 @@ drwxr-xr-x  7 user  staff   224B Apr 21 16:36 ..
 
 Write bash functions `marco` and `polo` that do the following:
 Whenever you execute `marco` the current working directory should be saved in some manner, then when you execute `polo`, no matter what directory you are in, `polo` should `cd` you back to the directory where you executed `marco`. For ease of debugging you can write the code in a file `marco.sh` and (re)load the definitions to your shell by executing `source marco.sh`.
+
+```
+vim marco
+<!-- create & edit marco file -->
+
+#!/bin/bash
+
+marco() {
+     export MARCO_DIR=$(pwd)
+}
+polo() {
+     cd "$MARCO_DIR" || return 1
+}
+```
+
+## Ex3:
+
+Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run. Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end. Bonus points if you can also report how many runs it took for the script to fail.
+
+```
+ #!/usr/bin/env bash
+
+ n=$(( RANDOM % 100 ))
+
+ if [[ n -eq 42 ]]; then
+    echo "Something went wrong"
+    >&2 echo "The error was using magic numbers"
+    exit 1
+ fi
+
+ echo "Everything went according to plan"
+```
