@@ -67,3 +67,33 @@ Say you have a command that fails rarely. In order to debug it you need to captu
 
  echo "Everything went according to plan"
 ```
+
+```console
+solveEx3.sh
+
+counter=0
+<!-- variable for counting runs  -->
+stdout="output.txt"
+<!-- for capturing standard output -->
+stderr="error.txt"
+<!-- for capturing standard error -->
+
+<!-- looping until the script failed. I save the given script in random.sh -->
+<!-- &> /dev/null is used to redirect both stdout and stderrof to the null device /dev/null which is a special device file on Unix-like operating systems that discards any data written to it -->
+while bash random.sh &> /dev/null; do
+	((counter++))
+done
+
+<!-- capturing result both output and errors -->
+bash random.sh > "$stdout" 2> "$stderr"
+
+<!-- print out result -->
+echo "Output:"
+cat "$stdout"
+echo "Error:"
+cat "$stderr"
+echo "Command failed after $counter runs."
+
+<!-- clean up -->
+rm "$stdout" "$stderr"
+```
