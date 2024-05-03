@@ -125,3 +125,7 @@ find .: starts the search from the current directory.
 -xargs-0: takes the null-delimited input from find and passes it to zip as arguments, with the -0 flag indicating that the input is null-delimited.
 -zip html_files.zip: creates a zip file named "html_files.zip" containing all the HTML files passed as arguments by xargs.
 ```
+
+## Ex5:
+
+(Advanced) Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?
