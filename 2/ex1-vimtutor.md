@@ -371,10 +371,10 @@ Doubling to operate on a line also works for operators mentioned below.
 
   5. Repeat steps 2 through 4 to put all the lines in correct order.
 
----> d) Can you learn too?
+---> a) Roses are red,
 ---> b) Violets are blue,
 ---> c) Intelligence is learned,
----> a) Roses are red,
+---> d) Can you learn too?
 
 
 
@@ -392,7 +392,7 @@ Doubling to operate on a line also works for operators mentioned below.
 
   4. Repeat steps 2 and 3 until the first line is equal to the second one.
 
---->  Whan this lime was tuoed in, someone presswd some wrojg keys!
+--->  When this line was typed in, someone pressed some wrong keys!
 --->  When this line was typed in, someone pressed some wrong keys!
 
   5. Now move on to lesson 3.3.
@@ -417,7 +417,7 @@ NOTE: Remember that you should be learning by doing, not memorization.
 
   5. Repeat steps 3 and 4 until the first sentence is the same as the second.
 
----> This lubw has a few wptfd that mrrf changing usf the change operator.
+---> This line has a few wprds that need changing using the change operator.
 ---> This line has a few words that need changing using the change operator.
 
 Notice that  ce  deletes the word and places you in Insert mode.
@@ -553,7 +553,7 @@ NOTE: This is very useful in debugging a program with unmatched parentheses!
   3. Now type  :s/thee/the/g .  Adding the  g  flag means to substitute
      globally in the line, change all occurrences of "thee" in the line.
 
----> thee best time to see thee flowers is in thee spring.
+---> the best time to see the flowers is in the spring.
 
   4. To change every occurrence of a character string between two lines,
      type   :#,#s/old/new/g    where #,# are the line numbers of the range
@@ -740,7 +740,7 @@ NOTE:  You can also read the output of an external command.  For example,
 
   5. Use  e  to move to the next incomplete word and repeat steps 3 and 4.
 
----> This li will allow you to pract appendi text to a line.
+---> This line will allow you to practice appending text to a line.
 ---> This line will allow you to practice appending text to a line.
 
 NOTE:  a, i and A all go to the same Insert mode, the only difference is where
@@ -763,7 +763,7 @@ NOTE:  a, i and A all go to the same Insert mode, the only difference is where
 
   4. Repeat the steps to replace the remaining xxx.
 
----> Adding 123 to xxx gives you xxx.
+---> Adding 123 to 456 gives you 579.
 ---> Adding 123 to 456 gives you 579.
 
 NOTE:  Replace mode is like Insert mode, but every typed character deletes an
@@ -789,7 +789,8 @@ NOTE:  Replace mode is like Insert mode, but every typed character deletes an
      the next line with  j$  and put the text there with  p .
 
 --->  a) this is the first item.
-      b)
+      b) this is the first item.
+
 
   NOTE: You can also use  y  as an operator:  yw  yanks one word,
         yy  yanks the whole line, then  p  puts that line.
