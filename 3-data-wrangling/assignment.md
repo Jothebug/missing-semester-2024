@@ -43,3 +43,15 @@ explanation:
 
 sh combinations to run command
 ```
+### Ex3
+To do in-place substitution it is quite tempting to do something like `sed s/REGEX/SUBSTITUTION/ input.txt > input.txt`. However this is a bad idea, why? Is this particular to `sed`? Use` man sed` to find out how to accomplish this.
+
+```
+subtitution command:
+-  sed -i 's/REGEX/SUBSTITUTION/' input.txt 
+
+explanation:
+-  > command => for redirecting the standard output of a command to a file. It will create the file if it does not exist, or truncate it to zero length if it does exist. In this case the shell first truncates input.txt to zero bytes before `sed` starts reading it
+- By the time `sed` processes, the file is empty. Therefore, the output redirection (> input.txt) simply writes nothing to the file.
+- To handle this issue, using sed -i to perform an in-place subtitution the file.
+```
