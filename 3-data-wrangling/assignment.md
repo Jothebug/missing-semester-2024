@@ -11,7 +11,7 @@ explanation:
 + grep -vE 's$': This filters out words ending with 's'.
 + tr '[:upper:]' '[:lower:]': This converts all uppercase letters to lowercase.
 
-After running the command, you have a words.txt file contains all the words that satisfy the conditions 
+After running the command, you have a words.txt file contains all the words that satisfy the conditions
 
 2. What are the three most common last two letters of those word
 - sed 's/.*\(..\)$/\1/' filtered_words.txt | sort | uniq -c | sort -nr | head -n 3
@@ -43,15 +43,35 @@ explanation:
 
 sh combinations to run command
 ```
+
 ### Ex3
+
 To do in-place substitution it is quite tempting to do something like `sed s/REGEX/SUBSTITUTION/ input.txt > input.txt`. However this is a bad idea, why? Is this particular to `sed`? Use` man sed` to find out how to accomplish this.
 
 ```
 subtitution command:
--  sed -i 's/REGEX/SUBSTITUTION/' input.txt 
+-  sed -i 's/REGEX/SUBSTITUTION/' input.txt
 
 explanation:
 -  > command => for redirecting the standard output of a command to a file. It will create the file if it does not exist, or truncate it to zero length if it does exist. In this case the shell first truncates input.txt to zero bytes before `sed` starts reading it
 - By the time `sed` processes, the file is empty. Therefore, the output redirection (> input.txt) simply writes nothing to the file.
 - To handle this issue, using sed -i to perform an in-place subtitution the file.
 ```
+
+### Ex4:
+
+Find your average, median, and max system boot time over the last ten boots. Use `journalctl` on Linux and `log show` on macOS, and look for log timestamps near the beginning and end of each boot.
+
+```
+log show | grep -E "=== system boot:| Previous shutdown cause: 5" | tail -n 10 > bootlog.txt
+
+I skip the calculation part because I don't want to install r or st in my computer
+```
+
+### Ex5:
+
+Skipped
+
+### Ex6:
+
+Find an online data set like this one, this one, or maybe one from here. Fetch it using `curl` and extract out just two columns of numerical data. If you’re fetching HTML data, `pup` might be helpful. For JSON data, try `jq`. Find the min and max of one column in a single command, and the difference of the sum of each column in another.
