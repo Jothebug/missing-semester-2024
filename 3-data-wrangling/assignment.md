@@ -91,7 +91,7 @@ explanation:
 awk -F ',' '{print $2 "," $3}' glaciers.csv > numerical-glaciers.csv
 
 explanation:
-- awk -F ',' '{print $2 "," $3}: use awk to extract the second and third columns and then saves them in numerical-glaciers.csv
+- awk -F ',' '{print $2 "," $3}: use awk to extract the second and third columns, and then redirect the output to numerical-glaciers.csv
 
 3. Find the min/max of the first column in numerical-glaciers.csv
 awk -F ',' '{print $1}' numerical-glaciers.csv | sort -n | awk 'NR==1 {min=$1} END {print "Min:", min}'; awk -F ',' '{print $1}' numerical-glaciers.csv | sort -n | tail -n 1 | awk '{print "Max:", $1}'
@@ -100,10 +100,10 @@ awk -F ',' '{print $1}' numerical-glaciers.csv | sort -n | awk 'NR==1 {min=$1} E
 
 explanation:
 - sort -n: sorts the input numerically
-- awk 'NR==1 {min=$1} END {print "Min:", min}': 
+- awk 'NR==1 {min=$1} END {print "Min:", min}':
        + NR==1 {min=$1}: check if the current line (NR) === 1, which means it's processing the first line of the sorted list. If it is, it assigns the value of the first field (`$1`) to the variable `min`
-       
-       + END {print "Min:", min}: after all processing ended, it prints "Min": 
+
+       + END {print "Min:", min}: after all processing ended, it prints "Min":
 
 - awk -F ',' '{print $1}' numerical-glaciers.csv | sort -n | tail -n 1 | awk '{print "Max:", $1}': because it sorts the numerical values in ascending order, `tail -n 1` will extracr the last line of the sorted output, which corresponds to the max value.
 
