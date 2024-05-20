@@ -42,3 +42,27 @@ sh pidwait.sh $sleep_pid
 # Execute ls command after the sleep process completes
 ls
 ```
+
+## Terminal multiplexer
+
+### Ex1:
+
+Follow this tmux tutorial and then learn how to do some basic customizations following these steps.
+
+```
+I use iterm2
+```
+
+## Aliases
+
+### Ex1:
+
+Create an alias dc that resolves to cd for when you type it wrongly.
+
+```
+alias dc=cd
+```
+
+### Ex2:
+
+Run `history | awk '{$1="";print substr($0,2)}' | sort | uniq -c | sort -n | tail -n 10` to get your top 10 most used commands and consider writing shorter aliases for them. Note: this works for Bash; if you’re using ZSH, use `history 1` instead of just `history`.
